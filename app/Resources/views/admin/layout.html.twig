@@ -8,6 +8,11 @@
 {% extends 'base.html.twig' %}
 
 {% block header_navigation_links %}
+   {% if is_granted('ROLE_ADMIN') %}
+      <li>
+          <a href="#">is_granted called</a>
+      </li>
+    {% endif %}
     <li>
         <a href="{{ path('admin_post_index') }}">
             <i class="fa fa-list-alt" aria-hidden="true"></i> {{ 'menu.post_list'|trans }}
